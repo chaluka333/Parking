@@ -8,6 +8,9 @@ Public Class frmRegisterVehicle
     Dim vehicleCol As List(Of Vehicle) = New List(Of Vehicle)
     Dim isFromPerson As Boolean = False
     Dim vhList As New List(Of ParkedVehicle)
+    Dim dt As New DataTable
+    Dim isFromVHList As Boolean = False
+    Dim depItem As ParkedVehicle
 
     Private Sub GetPersonalDetails()
         personCol.Clear()
@@ -57,11 +60,26 @@ Public Class frmRegisterVehicle
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetPersonalDetails()
         GetVehicleTypes()
+
         lblTime.Text = ""
+        lblArr.Text = ""
+        lblLocation.Text = ""
+        lblNIC.Text = ""
+        lblTP.Text = ""
+        lblType.Text = ""
+        cmbVType.DropDownStyle = ComboBoxStyle.DropDownList
 
         If cmbVType.Items.Count > 0 Then
             cmbVType.SelectedIndex = 0
         End If
+
+        dt.Columns.Add("ID", GetType(Integer))
+        dt.Columns.Add("V. Num", GetType(String))
+        dt.Columns.Add("Type", GetType(String))
+        dt.Columns.Add("Location", GetType(Integer))
+        dt.Columns.Add("NIC", GetType(String))
+        dt.Columns.Add("TP", GetType(String))
+        dt.Columns.Add("Arr. Time", GetType(String))
     End Sub
 
     Private Sub txtNIC_TextChanged(sender As Object, e As EventArgs) Handles txtNIC.TextChanged
@@ -102,7 +120,8 @@ Public Class frmRegisterVehicle
             ElseIf response.Location = -1 Then
                 MessageBox.Show("There is no room available for this type of vehicle", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MessageBox.Show("Vehicle registered", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                RefreshDGV()
+                MessageBox.Show("Vehicle registered" + Environment.NewLine + "Parking spot : " + response.Location.ToString(), "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             MessageBox.Show("Error occured during the process. Please insert the data again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -119,5 +138,67 @@ Public Class frmRegisterVehicle
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblTime.Text = DateTime.Now.ToString("yyyy/MMM/dd | HH:mm:ss")
+    End Sub
+
+    Private Sub RefreshDGV()
+        Dim vhList = metaData.GetParkedList()
+        Dim autoCol As New AutoCompleteStringCollection
+        dt.Rows.Clear()
+
+        For Each item In vhList
+            dt.Rows.Add(item.dbID, item.Vnum, item.Type, item.Location, item.ID, item.TP, item.ArrTime.ToString("dd/MMM | HH:mm"))
+            autoCol.Add(item.Vnum)
+        Next
+
+        txtDepVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        txtDepVehicle.AutoCompleteSource = AutoCompleteSource.CustomSource
+        txtDepVehicle.AutoCompleteCustomSource = autoCol
+
+        dgv1.DataSource = dt
+        dgv1.Refresh()
+    End Sub
+
+    Private Sub txtDepVehicle_TextChanged(sender As Object, e As EventArgs) Handles txtDepVehicle.TextChanged
+        Dim vhList = metaData.GetParkedList()
+
+        For Each item In vhList
+            If String.Equals(item.Vnum, txtDepVehicle.Text) Then
+                lblArr.Text = item.ArrTime
+                lblLocation.Text = item.Location
+                lblNIC.Text = item.ID
+                lblTP.Text = item.TP
+                lblType.Text = item.Type
+                isFromVHList = True
+                btnDeparture.Enabled = True
+                depItem = item
+                Exit Sub
+            Else
+                ClearDep()
+            End If
+        Next
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnDeparture.Click
+        If isFromVHList AndAlso depItem IsNot Nothing Then
+            Dim response = metaData.DepartuerVehicle(depItem)
+            If response Is Nothing Then
+                MessageBox.Show("Vehicle departuring faild. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Else
+                RefreshDGV()
+                ClearDep()
+                txtDepVehicle.Text= ""
+            End If
+        End If
+    End Sub
+
+    Private Sub ClearDep()
+        lblArr.Text = ""
+        lblLocation.Text = ""
+        lblNIC.Text = ""
+        lblTP.Text = ""
+        lblType.Text = ""
+        isFromVHList = False
+        btnDeparture.Enabled = False
+        depItem = Nothing
     End Sub
 End Class

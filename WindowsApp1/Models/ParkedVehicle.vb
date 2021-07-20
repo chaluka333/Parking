@@ -6,4 +6,5 @@
     Public Type As String
     Public ArrTime As DateTime
     Public Location As Int16
+    Public DepTime As DateTime
 End Class

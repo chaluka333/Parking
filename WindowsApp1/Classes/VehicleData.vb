@@ -48,14 +48,48 @@ Public Class VehicleData
             Else
                 Return Nothing
             End If
+
         Catch ex As Exception
             Return Nothing
         End Try
 
-
+        _vehicleList.Add(item)
         Return item
     End Function
 
+    Public Function DepartuerVehicle(item As ParkedVehicle) As ParkedVehicle
+        Try
+            Dim time = DateTime.Now
+            Dim cmd = DBCon.CreateCommand()
+
+            cmd.CommandText = "UPDATE tblparking SET Depature_Time = @depTime WHERE ID = @id"
+            cmd.Parameters.AddWithValue("@depTime", time)
+            cmd.Parameters.AddWithValue("@id", item.dbID)
+
+            Dim res = cmd.ExecuteNonQuery()
+
+            If res > 0 Then
+                Dim temp = _dictionary.Item(item.Type)
+                temp.Add(item.Location)
+                temp.Sort()
+
+                _dictionary.Item(item.Type) = temp
+                _vehicleList.Remove(item)
+
+                item.DepTime = time
+
+                Return item
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function GetParkedList() As List(Of ParkedVehicle)
+        Return _vehicleList
+    End Function
 
     Public Shared ReadOnly Property GetInstance() As VehicleData
         Get
