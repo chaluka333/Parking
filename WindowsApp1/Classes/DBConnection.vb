@@ -6,7 +6,6 @@ Friend Class DBConnection
 
     Shared Sub New()
         Connection = New MySqlConnection(connString)
-
         Try
             Connection.Open()
             Debug.WriteLine("Connection opened")
