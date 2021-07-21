@@ -165,6 +165,7 @@ Partial Class frmVehicleCategory
         Me.Controls.Add(Me.txtType)
         Me.Name = "frmVehicleCategory"
         Me.Text = "Vehicle Category"
+        Me.TopMost = True
         CType(Me.numFrom, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numTo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numCharge, System.ComponentModel.ISupportInitialize).EndInit()

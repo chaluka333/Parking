@@ -25,6 +25,19 @@ Partial Class frmRegisterVehicle
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnDeparture = New System.Windows.Forms.Button()
+        Me.lblArr = New System.Windows.Forms.Label()
+        Me.lblLocation = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lblNIC = New System.Windows.Forms.Label()
+        Me.lblTP = New System.Windows.Forms.Label()
+        Me.lblType = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtDepVehicle = New System.Windows.Forms.TextBox()
         Me.txtTP = New System.Windows.Forms.TextBox()
         Me.txtVID = New System.Windows.Forms.TextBox()
         Me.txtNIC = New System.Windows.Forms.TextBox()
@@ -39,19 +52,6 @@ Partial Class frmRegisterVehicle
         Me.dgv1 = New System.Windows.Forms.DataGridView()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtDepVehicle = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblNIC = New System.Windows.Forms.Label()
-        Me.lblTP = New System.Windows.Forms.Label()
-        Me.lblType = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblLocation = New System.Windows.Forms.Label()
-        Me.lblArr = New System.Windows.Forms.Label()
-        Me.btnDeparture = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -83,6 +83,121 @@ Partial Class frmRegisterVehicle
         Me.GroupBox2.TabIndex = 21
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Departure"
+        '
+        'btnDeparture
+        '
+        Me.btnDeparture.Location = New System.Drawing.Point(177, 259)
+        Me.btnDeparture.Name = "btnDeparture"
+        Me.btnDeparture.Size = New System.Drawing.Size(129, 45)
+        Me.btnDeparture.TabIndex = 20
+        Me.btnDeparture.Text = "Depature"
+        Me.btnDeparture.UseVisualStyleBackColor = True
+        '
+        'lblArr
+        '
+        Me.lblArr.AutoSize = True
+        Me.lblArr.Location = New System.Drawing.Point(116, 222)
+        Me.lblArr.Name = "lblArr"
+        Me.lblArr.Size = New System.Drawing.Size(75, 13)
+        Me.lblArr.TabIndex = 29
+        Me.lblArr.Text = "Vehicle Type :"
+        '
+        'lblLocation
+        '
+        Me.lblLocation.AutoSize = True
+        Me.lblLocation.Location = New System.Drawing.Point(116, 185)
+        Me.lblLocation.Name = "lblLocation"
+        Me.lblLocation.Size = New System.Drawing.Size(75, 13)
+        Me.lblLocation.TabIndex = 28
+        Me.lblLocation.Text = "Vehicle Type :"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(23, 185)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(54, 13)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Location :"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(23, 222)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(71, 13)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "Arrival Time : "
+        '
+        'lblNIC
+        '
+        Me.lblNIC.AutoSize = True
+        Me.lblNIC.Location = New System.Drawing.Point(116, 74)
+        Me.lblNIC.Name = "lblNIC"
+        Me.lblNIC.Size = New System.Drawing.Size(78, 13)
+        Me.lblNIC.TabIndex = 23
+        Me.lblNIC.Text = "Customer NIC :"
+        '
+        'lblTP
+        '
+        Me.lblTP.AutoSize = True
+        Me.lblTP.Location = New System.Drawing.Point(116, 111)
+        Me.lblTP.Name = "lblTP"
+        Me.lblTP.Size = New System.Drawing.Size(74, 13)
+        Me.lblTP.TabIndex = 24
+        Me.lblTP.Text = "Customer TP :"
+        '
+        'lblType
+        '
+        Me.lblType.AutoSize = True
+        Me.lblType.Location = New System.Drawing.Point(116, 148)
+        Me.lblType.Name = "lblType"
+        Me.lblType.Size = New System.Drawing.Size(75, 13)
+        Me.lblType.TabIndex = 25
+        Me.lblType.Text = "Vehicle Type :"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(23, 74)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(78, 13)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "Customer NIC :"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(23, 111)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "Customer TP :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(23, 37)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 13)
+        Me.Label6.TabIndex = 20
+        Me.Label6.Text = "Vehicle Num :"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(23, 148)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(75, 13)
+        Me.Label9.TabIndex = 22
+        Me.Label9.Text = "Vehicle Type :"
+        '
+        'txtDepVehicle
+        '
+        Me.txtDepVehicle.Location = New System.Drawing.Point(119, 30)
+        Me.txtDepVehicle.Name = "txtDepVehicle"
+        Me.txtDepVehicle.Size = New System.Drawing.Size(187, 20)
+        Me.txtDepVehicle.TabIndex = 21
         '
         'txtTP
         '
@@ -144,7 +259,6 @@ Partial Class frmRegisterVehicle
         'cmbVType
         '
         Me.cmbVType.FormattingEnabled = True
-        Me.cmbVType.Items.AddRange(New Object() {"Car", "Van", "Bike", "ThreeWheel"})
         Me.cmbVType.Location = New System.Drawing.Point(119, 105)
         Me.cmbVType.Name = "cmbVType"
         Me.cmbVType.Size = New System.Drawing.Size(187, 21)
@@ -222,121 +336,6 @@ Partial Class frmRegisterVehicle
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Arrival"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 37)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 13)
-        Me.Label6.TabIndex = 20
-        Me.Label6.Text = "Vehicle Num :"
-        '
-        'txtDepVehicle
-        '
-        Me.txtDepVehicle.Location = New System.Drawing.Point(119, 30)
-        Me.txtDepVehicle.Name = "txtDepVehicle"
-        Me.txtDepVehicle.Size = New System.Drawing.Size(187, 20)
-        Me.txtDepVehicle.TabIndex = 21
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(23, 74)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 13)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Customer NIC :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(23, 111)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
-        Me.Label8.TabIndex = 21
-        Me.Label8.Text = "Customer TP :"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(23, 148)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 13)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Vehicle Type :"
-        '
-        'lblNIC
-        '
-        Me.lblNIC.AutoSize = True
-        Me.lblNIC.Location = New System.Drawing.Point(116, 74)
-        Me.lblNIC.Name = "lblNIC"
-        Me.lblNIC.Size = New System.Drawing.Size(78, 13)
-        Me.lblNIC.TabIndex = 23
-        Me.lblNIC.Text = "Customer NIC :"
-        '
-        'lblTP
-        '
-        Me.lblTP.AutoSize = True
-        Me.lblTP.Location = New System.Drawing.Point(116, 111)
-        Me.lblTP.Name = "lblTP"
-        Me.lblTP.Size = New System.Drawing.Size(74, 13)
-        Me.lblTP.TabIndex = 24
-        Me.lblTP.Text = "Customer TP :"
-        '
-        'lblType
-        '
-        Me.lblType.AutoSize = True
-        Me.lblType.Location = New System.Drawing.Point(116, 148)
-        Me.lblType.Name = "lblType"
-        Me.lblType.Size = New System.Drawing.Size(75, 13)
-        Me.lblType.TabIndex = 25
-        Me.lblType.Text = "Vehicle Type :"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(23, 185)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(54, 13)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Location :"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(23, 222)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(71, 13)
-        Me.Label11.TabIndex = 27
-        Me.Label11.Text = "Arrival Time : "
-        '
-        'lblLocation
-        '
-        Me.lblLocation.AutoSize = True
-        Me.lblLocation.Location = New System.Drawing.Point(116, 185)
-        Me.lblLocation.Name = "lblLocation"
-        Me.lblLocation.Size = New System.Drawing.Size(75, 13)
-        Me.lblLocation.TabIndex = 28
-        Me.lblLocation.Text = "Vehicle Type :"
-        '
-        'lblArr
-        '
-        Me.lblArr.AutoSize = True
-        Me.lblArr.Location = New System.Drawing.Point(116, 222)
-        Me.lblArr.Name = "lblArr"
-        Me.lblArr.Size = New System.Drawing.Size(75, 13)
-        Me.lblArr.TabIndex = 29
-        Me.lblArr.Text = "Vehicle Type :"
-        '
-        'btnDeparture
-        '
-        Me.btnDeparture.Location = New System.Drawing.Point(177, 259)
-        Me.btnDeparture.Name = "btnDeparture"
-        Me.btnDeparture.Size = New System.Drawing.Size(129, 45)
-        Me.btnDeparture.TabIndex = 20
-        Me.btnDeparture.Text = "Depature"
-        Me.btnDeparture.UseVisualStyleBackColor = True
-        '
         'frmRegisterVehicle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -347,6 +346,7 @@ Partial Class frmRegisterVehicle
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmRegisterVehicle"
         Me.Text = "Register Vehicle"
+        Me.TopMost = True
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).EndInit()

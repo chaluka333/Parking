@@ -12,6 +12,32 @@ Public Class frmRegisterVehicle
     Dim isFromVHList As Boolean = False
     Dim depItem As ParkedVehicle
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        GetPersonalDetails()
+        GetVehicleTypes()
+        RefreshCMB()
+
+        lblTime.Text = ""
+        lblArr.Text = ""
+        lblLocation.Text = ""
+        lblNIC.Text = ""
+        lblTP.Text = ""
+        lblType.Text = ""
+        cmbVType.DropDownStyle = ComboBoxStyle.DropDownList
+
+        If cmbVType.Items.Count > 0 Then
+            cmbVType.SelectedIndex = 0
+        End If
+
+        dt.Columns.Add("ID", GetType(Integer))
+        dt.Columns.Add("V. Num", GetType(String))
+        dt.Columns.Add("Type", GetType(String))
+        dt.Columns.Add("Location", GetType(Integer))
+        dt.Columns.Add("NIC", GetType(String))
+        dt.Columns.Add("TP", GetType(String))
+        dt.Columns.Add("Arr. Time", GetType(String))
+    End Sub
+
     Private Sub GetPersonalDetails()
         personCol.Clear()
 
@@ -57,29 +83,16 @@ Public Class frmRegisterVehicle
         End Using
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        GetPersonalDetails()
-        GetVehicleTypes()
+    Private Sub RefreshCMB()
+        Dim cmd = DBCon.CreateCommand()
+        cmd.CommandText = "SELECT V_Type FROM tblvehicle"
+        cmbVType.Items.Clear()
 
-        lblTime.Text = ""
-        lblArr.Text = ""
-        lblLocation.Text = ""
-        lblNIC.Text = ""
-        lblTP.Text = ""
-        lblType.Text = ""
-        cmbVType.DropDownStyle = ComboBoxStyle.DropDownList
-
-        If cmbVType.Items.Count > 0 Then
-            cmbVType.SelectedIndex = 0
-        End If
-
-        dt.Columns.Add("ID", GetType(Integer))
-        dt.Columns.Add("V. Num", GetType(String))
-        dt.Columns.Add("Type", GetType(String))
-        dt.Columns.Add("Location", GetType(Integer))
-        dt.Columns.Add("NIC", GetType(String))
-        dt.Columns.Add("TP", GetType(String))
-        dt.Columns.Add("Arr. Time", GetType(String))
+        Using reader = cmd.ExecuteReader
+            While reader.Read()
+                cmbVType.Items.Add(reader.GetString(0))
+            End While
+        End Using
     End Sub
 
     Private Sub txtNIC_TextChanged(sender As Object, e As EventArgs) Handles txtNIC.TextChanged
@@ -101,7 +114,7 @@ Public Class frmRegisterVehicle
         Dim id As Boolean = String.IsNullOrEmpty(txtVID.Text)
 
         If nic Or tp Or type Or id Then
-            MessageBox.Show("Please dill all the fields to proceed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Please fill all the fields to proceed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -186,7 +199,8 @@ Public Class frmRegisterVehicle
             Else
                 RefreshDGV()
                 ClearDep()
-                txtDepVehicle.Text= ""
+                txtDepVehicle.Text = ""
+                MessageBox.Show("Vehicle departure complete", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
@@ -200,5 +214,11 @@ Public Class frmRegisterVehicle
         isFromVHList = False
         btnDeparture.Enabled = False
         depItem = Nothing
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        txtNIC.Text = ""
+        txtTP.Text = ""
+        txtVID.Text = ""
     End Sub
 End Class
