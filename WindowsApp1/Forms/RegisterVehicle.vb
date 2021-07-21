@@ -15,7 +15,6 @@ Public Class frmRegisterVehicle
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetPersonalDetails()
         GetVehicleTypes()
-        RefreshCMB()
 
         lblTime.Text = ""
         lblArr.Text = ""
@@ -79,18 +78,6 @@ Public Class frmRegisterVehicle
 
                 vehicleCol.Add(temp)
                 cmbVType.Items.Add(temp.Type)
-            End While
-        End Using
-    End Sub
-
-    Private Sub RefreshCMB()
-        Dim cmd = DBCon.CreateCommand()
-        cmd.CommandText = "SELECT V_Type FROM tblvehicle"
-        cmbVType.Items.Clear()
-
-        Using reader = cmd.ExecuteReader
-            While reader.Read()
-                cmbVType.Items.Add(reader.GetString(0))
             End While
         End Using
     End Sub
@@ -197,10 +184,21 @@ Public Class frmRegisterVehicle
             If response Is Nothing Then
                 MessageBox.Show("Vehicle departuring faild. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+                Dim hrDiff = Convert.ToInt32(DateDiff(DateInterval.Hour, response.ArrTime, response.DepTime))
+                Dim fee As Integer, perHr As Integer
+
+                For Each item In vehicleCol
+                    If String.Equals(item.Type, response.Type) Then
+                        perHr = item.Charge
+                        Exit For
+                    End If
+                Next
+                fee = perHr * hrDiff
+
                 RefreshDGV()
                 ClearDep()
                 txtDepVehicle.Text = ""
-                MessageBox.Show("Vehicle departure complete", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Vehicle departure complete" + Environment.NewLine + "Fee : Rs." + fee.ToString() + ".00", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
