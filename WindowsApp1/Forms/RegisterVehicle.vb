@@ -15,6 +15,7 @@ Public Class frmRegisterVehicle
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         GetPersonalDetails()
         GetVehicleTypes()
+        RefreshListView()
 
         lblTime.Text = ""
         lblArr.Text = ""
@@ -202,6 +203,9 @@ Public Class frmRegisterVehicle
             End If
         End If
     End Sub
+
+    Private Sub RefreshListView()        Dim slots = metaData.GetRemainSlots()        lv1.Items.Clear()        For Each items In slots            lv1.Items.Add(items.Key + " : Slots " + items.Value.Count.ToString())        Next    End Sub
+
 
     Private Sub ClearDep()
         lblArr.Text = ""

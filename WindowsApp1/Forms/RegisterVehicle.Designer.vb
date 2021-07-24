@@ -23,6 +23,7 @@ Partial Class frmRegisterVehicle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegisterVehicle))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnDeparture = New System.Windows.Forms.Button()
@@ -52,6 +53,7 @@ Partial Class frmRegisterVehicle
         Me.dgv1 = New System.Windows.Forms.DataGridView()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lv1 = New System.Windows.Forms.ListView()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -64,6 +66,8 @@ Partial Class frmRegisterVehicle
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Controls.Add(Me.btnDeparture)
         Me.GroupBox2.Controls.Add(Me.lblArr)
         Me.GroupBox2.Controls.Add(Me.lblLocation)
@@ -77,6 +81,7 @@ Partial Class frmRegisterVehicle
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtDepVehicle)
+        Me.GroupBox2.Font = New System.Drawing.Font("MS Gothic", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 325)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(356, 351)
@@ -86,16 +91,22 @@ Partial Class frmRegisterVehicle
         '
         'btnDeparture
         '
+        Me.btnDeparture.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnDeparture.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDeparture.Font = New System.Drawing.Font("Modern No. 20", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeparture.ForeColor = System.Drawing.Color.White
         Me.btnDeparture.Location = New System.Drawing.Point(177, 259)
         Me.btnDeparture.Name = "btnDeparture"
         Me.btnDeparture.Size = New System.Drawing.Size(129, 45)
         Me.btnDeparture.TabIndex = 20
         Me.btnDeparture.Text = "Depature"
-        Me.btnDeparture.UseVisualStyleBackColor = True
+        Me.btnDeparture.UseVisualStyleBackColor = False
         '
         'lblArr
         '
         Me.lblArr.AutoSize = True
+        Me.lblArr.BackColor = System.Drawing.Color.Transparent
+        Me.lblArr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblArr.Location = New System.Drawing.Point(116, 222)
         Me.lblArr.Name = "lblArr"
         Me.lblArr.Size = New System.Drawing.Size(75, 13)
@@ -105,6 +116,8 @@ Partial Class frmRegisterVehicle
         'lblLocation
         '
         Me.lblLocation.AutoSize = True
+        Me.lblLocation.BackColor = System.Drawing.Color.Transparent
+        Me.lblLocation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLocation.Location = New System.Drawing.Point(116, 185)
         Me.lblLocation.Name = "lblLocation"
         Me.lblLocation.Size = New System.Drawing.Size(75, 13)
@@ -114,6 +127,8 @@ Partial Class frmRegisterVehicle
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(23, 185)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(54, 13)
@@ -123,6 +138,8 @@ Partial Class frmRegisterVehicle
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(23, 222)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(71, 13)
@@ -132,6 +149,8 @@ Partial Class frmRegisterVehicle
         'lblNIC
         '
         Me.lblNIC.AutoSize = True
+        Me.lblNIC.BackColor = System.Drawing.Color.Transparent
+        Me.lblNIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNIC.Location = New System.Drawing.Point(116, 74)
         Me.lblNIC.Name = "lblNIC"
         Me.lblNIC.Size = New System.Drawing.Size(78, 13)
@@ -141,6 +160,8 @@ Partial Class frmRegisterVehicle
         'lblTP
         '
         Me.lblTP.AutoSize = True
+        Me.lblTP.BackColor = System.Drawing.Color.Transparent
+        Me.lblTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTP.Location = New System.Drawing.Point(116, 111)
         Me.lblTP.Name = "lblTP"
         Me.lblTP.Size = New System.Drawing.Size(74, 13)
@@ -150,6 +171,8 @@ Partial Class frmRegisterVehicle
         'lblType
         '
         Me.lblType.AutoSize = True
+        Me.lblType.BackColor = System.Drawing.Color.Transparent
+        Me.lblType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblType.Location = New System.Drawing.Point(116, 148)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(75, 13)
@@ -159,6 +182,8 @@ Partial Class frmRegisterVehicle
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(23, 74)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(78, 13)
@@ -168,6 +193,8 @@ Partial Class frmRegisterVehicle
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(23, 111)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 13)
@@ -177,6 +204,8 @@ Partial Class frmRegisterVehicle
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(23, 37)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(73, 13)
@@ -186,6 +215,8 @@ Partial Class frmRegisterVehicle
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(23, 148)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 13)
@@ -194,6 +225,7 @@ Partial Class frmRegisterVehicle
         '
         'txtDepVehicle
         '
+        Me.txtDepVehicle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDepVehicle.Location = New System.Drawing.Point(119, 30)
         Me.txtDepVehicle.Name = "txtDepVehicle"
         Me.txtDepVehicle.Size = New System.Drawing.Size(187, 20)
@@ -201,93 +233,115 @@ Partial Class frmRegisterVehicle
         '
         'txtTP
         '
+        Me.txtTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTP.Location = New System.Drawing.Point(119, 68)
         Me.txtTP.Name = "txtTP"
-        Me.txtTP.Size = New System.Drawing.Size(187, 20)
+        Me.txtTP.Size = New System.Drawing.Size(187, 21)
         Me.txtTP.TabIndex = 7
         '
         'txtVID
         '
+        Me.txtVID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVID.Location = New System.Drawing.Point(119, 144)
         Me.txtVID.Name = "txtVID"
-        Me.txtVID.Size = New System.Drawing.Size(187, 20)
+        Me.txtVID.Size = New System.Drawing.Size(187, 21)
         Me.txtVID.TabIndex = 9
         '
         'txtNIC
         '
+        Me.txtNIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNIC.Location = New System.Drawing.Point(119, 30)
         Me.txtNIC.Name = "txtNIC"
-        Me.txtNIC.Size = New System.Drawing.Size(187, 20)
+        Me.txtNIC.Size = New System.Drawing.Size(187, 21)
         Me.txtNIC.TabIndex = 6
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(177, 233)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(129, 45)
         Me.Button2.TabIndex = 12
         Me.Button2.Text = "Reset"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(28, 151)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(73, 13)
+        Me.Label5.Size = New System.Drawing.Size(83, 15)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Vehicle Num :"
         '
         'btnEnter
         '
+        Me.btnEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEnter.Font = New System.Drawing.Font("Modern No. 20", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEnter.ForeColor = System.Drawing.Color.White
         Me.btnEnter.Location = New System.Drawing.Point(26, 233)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(129, 45)
         Me.btnEnter.TabIndex = 13
         Me.btnEnter.Text = "Enter"
-        Me.btnEnter.UseVisualStyleBackColor = True
+        Me.btnEnter.UseVisualStyleBackColor = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(28, 113)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 13)
+        Me.Label4.Size = New System.Drawing.Size(82, 15)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Vehicle Type :"
         '
         'cmbVType
         '
+        Me.cmbVType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbVType.FormattingEnabled = True
         Me.cmbVType.Location = New System.Drawing.Point(119, 105)
         Me.cmbVType.Name = "cmbVType"
-        Me.cmbVType.Size = New System.Drawing.Size(187, 21)
+        Me.cmbVType.Size = New System.Drawing.Size(187, 23)
         Me.cmbVType.TabIndex = 15
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(28, 75)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 13)
+        Me.Label3.Size = New System.Drawing.Size(84, 15)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Customer TP :"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(28, 37)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.Size = New System.Drawing.Size(89, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Customer NIC :"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(28, 189)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 13)
+        Me.Label1.Size = New System.Drawing.Size(84, 15)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Current Time :"
         '
@@ -303,20 +357,24 @@ Partial Class frmRegisterVehicle
         Me.dgv1.Name = "dgv1"
         Me.dgv1.ReadOnly = True
         Me.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv1.Size = New System.Drawing.Size(807, 664)
+        Me.dgv1.Size = New System.Drawing.Size(807, 474)
         Me.dgv1.TabIndex = 17
         '
         'lblTime
         '
         Me.lblTime.AutoSize = True
+        Me.lblTime.BackColor = System.Drawing.Color.Transparent
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.Location = New System.Drawing.Point(116, 189)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(62, 13)
+        Me.lblTime.Size = New System.Drawing.Size(68, 15)
         Me.lblTime.TabIndex = 19
         Me.lblTime.Text = "Vehicle ID :"
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox1.Controls.Add(Me.lblTime)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -329,6 +387,8 @@ Partial Class frmRegisterVehicle
         Me.GroupBox1.Controls.Add(Me.txtNIC)
         Me.GroupBox1.Controls.Add(Me.txtVID)
         Me.GroupBox1.Controls.Add(Me.txtTP)
+        Me.GroupBox1.Font = New System.Drawing.Font("MS Gothic", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(356, 307)
@@ -336,11 +396,23 @@ Partial Class frmRegisterVehicle
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Arrival"
         '
+        'lv1
+        '
+        Me.lv1.HideSelection = False
+        Me.lv1.Location = New System.Drawing.Point(957, 492)
+        Me.lv1.Name = "lv1"
+        Me.lv1.Size = New System.Drawing.Size(224, 184)
+        Me.lv1.TabIndex = 22
+        Me.lv1.UseCompatibleStateImageBehavior = False
+        Me.lv1.View = System.Windows.Forms.View.Tile
+        '
         'frmRegisterVehicle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1193, 688)
+        Me.Controls.Add(Me.lv1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgv1)
         Me.Controls.Add(Me.GroupBox1)
@@ -384,4 +456,5 @@ Partial Class frmRegisterVehicle
     Friend WithEvents lblArr As Label
     Friend WithEvents lblLocation As Label
     Friend WithEvents btnDeparture As Button
+    Friend WithEvents lv1 As ListView
 End Class

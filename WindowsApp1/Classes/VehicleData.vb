@@ -91,6 +91,10 @@ Public Class VehicleData
         Return _vehicleList
     End Function
 
+    Public Function GetRemainSlots() As Dictionary(Of String, List(Of Integer))
+        Return _dictionary
+    End Function
+
     Public Shared ReadOnly Property GetInstance() As VehicleData
         Get
             If _obj Is Nothing Then
