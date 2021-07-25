@@ -103,4 +103,8 @@ Public Class frmVehicleCategory
             MessageBox.Show("Please fill all the field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub dgv1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv1.CellContentClick
+
+    End Sub
 End Class
