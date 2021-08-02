@@ -36,7 +36,11 @@ Public Class frmRegisterVehicle
         dt.Columns.Add("NIC", GetType(String))
         dt.Columns.Add("TP", GetType(String))
         dt.Columns.Add("Arr. Time", GetType(String))
+
+        RefreshDGV()
     End Sub
+
+
 
     Private Sub GetPersonalDetails()
         personCol.Clear()
@@ -106,6 +110,11 @@ Public Class frmRegisterVehicle
             Exit Sub
         End If
 
+        If vhList.FirstOrDefault(Function(s) s.Vnum = txtVID.Text) IsNot Nothing Then
+            MessageBox.Show("This vehicle register number is already in the parking lot. Please check registeration number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         Try
             Dim temp As New ParkedVehicle
             temp.ID = txtNIC.Text
@@ -116,25 +125,33 @@ Public Class frmRegisterVehicle
 
             Dim response = metaData.RegisterVehicle(temp)
 
+            If Not isFromPerson Then
+                Dim cmd = DBCon.CreateCommand()
+                cmd.CommandText = "INSERT INTO tblPersonal VALUES (@nic, @num)"
+                cmd.Parameters.AddWithValue("@nic", txtNIC.Text)
+                cmd.Parameters.AddWithValue("@num", txtTP.Text)
+                cmd.ExecuteNonQuery()
+                GetPersonalDetails()
+            End If
+
             If response Is Nothing Then
                 MessageBox.Show("Error occured during the process. Please insert the data again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf response.Location = -1 Then
                 MessageBox.Show("There is no room available for this type of vehicle", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
+                RefreshListView()
                 RefreshDGV()
                 MessageBox.Show("Vehicle registered" + Environment.NewLine + "Parking spot : " + response.Location.ToString(), "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
+            Throw
             MessageBox.Show("Error occured during the process. Please insert the data again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
 
     Private Sub txtTP_TextChanged(sender As Object, e As EventArgs) Handles txtTP.TextChanged
-        If Not Regex.Match(txtTP.Text, "^[0-9]*$").Success Then
-            txtTP.Text = ""
-            MessageBox.Show("Inalid contact number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -142,21 +159,24 @@ Public Class frmRegisterVehicle
     End Sub
 
     Private Sub RefreshDGV()
-        Dim vhList = metaData.GetParkedList()
-        Dim autoCol As New AutoCompleteStringCollection
-        dt.Rows.Clear()
+        vhList = metaData.GetParkedList()
 
-        For Each item In vhList
-            dt.Rows.Add(item.dbID, item.Vnum, item.Type, item.Location, item.ID, item.TP, item.ArrTime.ToString("dd/MMM | HH:mm"))
-            autoCol.Add(item.Vnum)
-        Next
+        If vhList.Count > 0 Then
+            Dim autoCol As New AutoCompleteStringCollection
+            dt.Rows.Clear()
 
-        txtDepVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-        txtDepVehicle.AutoCompleteSource = AutoCompleteSource.CustomSource
-        txtDepVehicle.AutoCompleteCustomSource = autoCol
+            For Each item In vhList
+                dt.Rows.Add(item.dbID, item.Vnum, item.Type, item.Location, item.ID, item.TP, item.ArrTime.ToString("dd/MMM | HH:mm"))
+                autoCol.Add(item.Vnum)
+            Next
 
-        dgv1.DataSource = dt
-        dgv1.Refresh()
+            txtDepVehicle.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            txtDepVehicle.AutoCompleteSource = AutoCompleteSource.CustomSource
+            txtDepVehicle.AutoCompleteCustomSource = autoCol
+
+            dgv1.DataSource = dt
+            dgv1.Refresh()
+        End If
     End Sub
 
     Private Sub txtDepVehicle_TextChanged(sender As Object, e As EventArgs) Handles txtDepVehicle.TextChanged
@@ -196,6 +216,7 @@ Public Class frmRegisterVehicle
                 Next
                 fee = perHr * hrDiff
 
+                RefreshListView()
                 RefreshDGV()
                 ClearDep()
                 txtDepVehicle.Text = ""
@@ -204,7 +225,14 @@ Public Class frmRegisterVehicle
         End If
     End Sub
 
-    Private Sub RefreshListView()        Dim slots = metaData.GetRemainSlots()        lv1.Items.Clear()        For Each items In slots            lv1.Items.Add(items.Key + " : Slots " + items.Value.Count.ToString())        Next    End Sub
+    Private Sub RefreshListView()
+        Dim slots = metaData.GetRemainSlots()
+        lv1.Items.Clear()
+
+        For Each items In slots
+            lv1.Items.Add(items.Key + " : Slots " + items.Value.Count.ToString())
+        Next
+    End Sub
 
 
     Private Sub ClearDep()
@@ -222,5 +250,23 @@ Public Class frmRegisterVehicle
         txtNIC.Text = ""
         txtTP.Text = ""
         txtVID.Text = ""
+    End Sub
+
+    Private Sub txtTP_Leave(sender As Object, e As EventArgs) Handles txtTP.Leave
+        If Not String.IsNullOrWhiteSpace(txtTP.Text) AndAlso Not Regex.Match(txtTP.Text, "^[0-9]{10}$").Success Then
+            txtTP.Text = ""
+            MessageBox.Show("Invalid contact number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub txtNIC_Enter(sender As Object, e As EventArgs) Handles txtNIC.Enter
+
+    End Sub
+
+    Private Sub txtNIC_Leave(sender As Object, e As EventArgs) Handles txtNIC.Leave
+        If Not String.IsNullOrWhiteSpace(txtNIC.Text) AndAlso Not Regex.Match(txtNIC.Text, "^([0-9]{11})$|^([0-9]{9}[v|V|x|X])$").Success Then
+            txtNIC.Text = ""
+            MessageBox.Show("Invalid NIC number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class

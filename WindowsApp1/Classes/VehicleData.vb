@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class VehicleData
     Private Shared _obj As VehicleData
@@ -23,6 +24,26 @@ Public Class VehicleData
                 _dictionary.Add(reader.GetString(0), tempList)
             End While
         End Using
+
+        cmd.CommandText = "SELECT ID, V_Type, V_Number, Arrival_Time, prk.NIC, Location, TP_Number FROM tblparking as prk INNER JOIN tblpersonal as prs ON prk.NIC = prs.NIC WHERE Depature_Time IS NULL"
+        Using reader = cmd.ExecuteReader
+            While reader.Read()
+                Dim temp = New ParkedVehicle()
+                temp.dbID = reader.GetInt32(0)
+                temp.Type = reader.GetString(1)
+                temp.Vnum = reader.GetString(2)
+                temp.ArrTime = reader.GetDateTime(3)
+                temp.ID = reader.GetString(4)
+                temp.Location = reader.GetInt32(5)
+                temp.TP = reader.GetString(6)
+                _vehicleList.Add(temp)
+            End While
+        End Using
+
+        For Each item In _vehicleList
+            _dictionary.Item(item.Type).Remove(item.Location)
+        Next
+
     End Sub
 
     Public Function RegisterVehicle(item As ParkedVehicle) As ParkedVehicle
@@ -36,10 +57,12 @@ Public Class VehicleData
 
         Try
             Dim cmd = DBCon.CreateCommand()
-            cmd.CommandText = "INSERT INTO tblparking (V_Type, V_Number, Arrival_Time) VALUES (@type, @num, @arr); SELECT LAST_INSERT_ID();"
+            cmd.CommandText = "INSERT INTO tblparking (V_Type, V_Number, Arrival_Time, NIC, Location) VALUES (@type, @num, @arr, @nic, @loc); SELECT LAST_INSERT_ID();"
             cmd.Parameters.AddWithValue("@type", item.Type)
             cmd.Parameters.AddWithValue("@num", item.Vnum)
             cmd.Parameters.AddWithValue("@arr", item.ArrTime)
+            cmd.Parameters.AddWithValue("@nic", item.ID)
+            cmd.Parameters.AddWithValue("@loc", item.Location)
 
             Dim dbID As Integer = cmd.ExecuteScalar()
 
