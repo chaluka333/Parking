@@ -205,7 +205,7 @@ Public Class frmRegisterVehicle
             If response Is Nothing Then
                 MessageBox.Show("Vehicle departuring faild. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                Dim hrDiff = Convert.ToInt32(DateDiff(DateInterval.Hour, response.ArrTime, response.DepTime))
+                Dim hrDiff = Convert.ToDecimal(DateDiff(DateInterval.Minute, response.ArrTime, response.DepTime))
                 Dim fee As Integer, perHr As Integer
 
                 For Each item In vehicleCol
@@ -214,7 +214,7 @@ Public Class frmRegisterVehicle
                         Exit For
                     End If
                 Next
-                fee = perHr * hrDiff
+                fee = perHr * Math.Ceiling(hrDiff / 60)
 
                 RefreshListView()
                 RefreshDGV()
