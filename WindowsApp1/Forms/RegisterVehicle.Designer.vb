@@ -54,6 +54,7 @@ Partial Class frmRegisterVehicle
         Me.lblTime = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lv1 = New System.Windows.Forms.ListView()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgv1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -349,6 +350,9 @@ Partial Class frmRegisterVehicle
         '
         Me.dgv1.AllowUserToAddRows = False
         Me.dgv1.AllowUserToDeleteRows = False
+        Me.dgv1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
@@ -398,13 +402,29 @@ Partial Class frmRegisterVehicle
         '
         'lv1
         '
+        Me.lv1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lv1.Font = New System.Drawing.Font("Sitka Display", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv1.HideSelection = False
-        Me.lv1.Location = New System.Drawing.Point(957, 492)
+        Me.lv1.Location = New System.Drawing.Point(775, 528)
         Me.lv1.Name = "lv1"
-        Me.lv1.Size = New System.Drawing.Size(224, 184)
+        Me.lv1.Size = New System.Drawing.Size(406, 148)
         Me.lv1.TabIndex = 22
         Me.lv1.UseCompatibleStateImageBehavior = False
         Me.lv1.View = System.Windows.Forms.View.Tile
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Book Antiqua", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label12.Location = New System.Drawing.Point(425, 559)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(296, 32)
+        Me.Label12.TabIndex = 23
+        Me.Label12.Text = "Available Spaces Now"
         '
         'frmRegisterVehicle
         '
@@ -412,6 +432,7 @@ Partial Class frmRegisterVehicle
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1193, 688)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.lv1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.dgv1)
@@ -424,6 +445,7 @@ Partial Class frmRegisterVehicle
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Timer1 As Timer
@@ -456,4 +478,5 @@ Partial Class frmRegisterVehicle
     Friend WithEvents lblLocation As Label
     Friend WithEvents btnDeparture As Button
     Friend WithEvents lv1 As ListView
+    Friend WithEvents Label12 As Label
 End Class

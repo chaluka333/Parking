@@ -36,10 +36,10 @@ Public Class frmVehicleCategory
                 RefreshDGV()
                 ClearAll()
             Else
-                MessageBox.Show("Data inserting faild. Please try again.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Data inserting failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Else
-            MessageBox.Show("Please fill all the field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -97,10 +97,10 @@ Public Class frmVehicleCategory
                 RefreshDGV()
                 ClearAll()
             Else
-                MessageBox.Show("Data updating faild. Please try again.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Data updating failed. Please try again.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Else
-            MessageBox.Show("Please fill all the field", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Please fill all the fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 

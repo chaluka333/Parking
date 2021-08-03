@@ -203,7 +203,7 @@ Public Class frmRegisterVehicle
         If isFromVHList AndAlso depItem IsNot Nothing Then
             Dim response = metaData.DepartuerVehicle(depItem)
             If response Is Nothing Then
-                MessageBox.Show("Vehicle departuring faild. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Vehicle departuring failed. Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 Dim hrDiff = Convert.ToDecimal(DateDiff(DateInterval.Minute, response.ArrTime, response.DepTime))
                 Dim fee As Integer, perHr As Integer
@@ -268,5 +268,9 @@ Public Class frmRegisterVehicle
             txtNIC.Text = ""
             MessageBox.Show("Invalid NIC number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub lv1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lv1.SelectedIndexChanged
+
     End Sub
 End Class

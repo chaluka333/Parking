@@ -59,7 +59,7 @@ Partial Class frmHome
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(205, 75)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Register New Categoy"
+        Me.Button2.Text = "Register New Category"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Label1
