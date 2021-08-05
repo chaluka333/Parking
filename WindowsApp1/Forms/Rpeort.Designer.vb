@@ -22,6 +22,7 @@ Partial Class Rpeort
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+<<<<<<< HEAD:WindowsApp1/Forms/Rpeort.Designer.vb
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SuspendLayout()
         '
@@ -34,10 +35,16 @@ Partial Class Rpeort
         Me.ReportViewer1.TabIndex = 0
         '
         'Rpeort
+=======
+        Me.SuspendLayout()
+        '
+        'frmReceipt
+>>>>>>> 5142b965dc86ca58f998ab5559d118756307e4de:WindowsApp1/Forms/frmReceipt.Designer.vb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+<<<<<<< HEAD:WindowsApp1/Forms/Rpeort.Designer.vb
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "Rpeort"
         Me.Text = "Rpeort"
@@ -46,4 +53,11 @@ Partial Class Rpeort
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+=======
+        Me.Name = "frmReceipt"
+        Me.Text = "frmReceipt"
+        Me.ResumeLayout(False)
+
+    End Sub
+>>>>>>> 5142b965dc86ca58f998ab5559d118756307e4de:WindowsApp1/Forms/frmReceipt.Designer.vb
 End Class
