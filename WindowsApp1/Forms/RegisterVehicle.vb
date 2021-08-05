@@ -141,7 +141,13 @@ Public Class frmRegisterVehicle
             Else
                 RefreshListView()
                 RefreshDGV()
-                MessageBox.Show("Vehicle registered" + Environment.NewLine + "Parking spot : " + response.Location.ToString(), "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim arrTicket = New TicketArrival()
+                arrTicket.vNum = response.Vnum
+                arrTicket.arrDate = response.ArrTime
+                arrTicket.location = response.Location
+                Dim ticket = New frmReceipt(arrTicket)
+                ticket.Show()
+                'MessageBox.Show("Vehicle registered" + Environment.NewLine + "Parking spot : " + response.Location.ToString(), "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As Exception
             Throw
