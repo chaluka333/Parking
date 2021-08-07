@@ -108,7 +108,7 @@ Partial Class frmRegisterVehicle
         Me.lblArr.AutoSize = True
         Me.lblArr.BackColor = System.Drawing.Color.Transparent
         Me.lblArr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArr.Location = New System.Drawing.Point(116, 222)
+        Me.lblArr.Location = New System.Drawing.Point(145, 215)
         Me.lblArr.Name = "lblArr"
         Me.lblArr.Size = New System.Drawing.Size(75, 13)
         Me.lblArr.TabIndex = 29
@@ -119,7 +119,7 @@ Partial Class frmRegisterVehicle
         Me.lblLocation.AutoSize = True
         Me.lblLocation.BackColor = System.Drawing.Color.Transparent
         Me.lblLocation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLocation.Location = New System.Drawing.Point(116, 185)
+        Me.lblLocation.Location = New System.Drawing.Point(144, 178)
         Me.lblLocation.Name = "lblLocation"
         Me.lblLocation.Size = New System.Drawing.Size(75, 13)
         Me.lblLocation.TabIndex = 28
@@ -129,10 +129,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(23, 185)
+        Me.Label10.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(7, 178)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(54, 13)
+        Me.Label10.Size = New System.Drawing.Size(97, 17)
         Me.Label10.TabIndex = 26
         Me.Label10.Text = "Location :"
         '
@@ -140,10 +140,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(23, 222)
+        Me.Label11.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(7, 215)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(71, 13)
+        Me.Label11.Size = New System.Drawing.Size(124, 17)
         Me.Label11.TabIndex = 27
         Me.Label11.Text = "Arrival Time : "
         '
@@ -152,7 +152,7 @@ Partial Class frmRegisterVehicle
         Me.lblNIC.AutoSize = True
         Me.lblNIC.BackColor = System.Drawing.Color.Transparent
         Me.lblNIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNIC.Location = New System.Drawing.Point(116, 74)
+        Me.lblNIC.Location = New System.Drawing.Point(145, 73)
         Me.lblNIC.Name = "lblNIC"
         Me.lblNIC.Size = New System.Drawing.Size(78, 13)
         Me.lblNIC.TabIndex = 23
@@ -163,7 +163,7 @@ Partial Class frmRegisterVehicle
         Me.lblTP.AutoSize = True
         Me.lblTP.BackColor = System.Drawing.Color.Transparent
         Me.lblTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTP.Location = New System.Drawing.Point(116, 111)
+        Me.lblTP.Location = New System.Drawing.Point(145, 107)
         Me.lblTP.Name = "lblTP"
         Me.lblTP.Size = New System.Drawing.Size(74, 13)
         Me.lblTP.TabIndex = 24
@@ -174,7 +174,7 @@ Partial Class frmRegisterVehicle
         Me.lblType.AutoSize = True
         Me.lblType.BackColor = System.Drawing.Color.Transparent
         Me.lblType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblType.Location = New System.Drawing.Point(116, 148)
+        Me.lblType.Location = New System.Drawing.Point(144, 144)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(75, 13)
         Me.lblType.TabIndex = 25
@@ -184,10 +184,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(23, 74)
+        Me.Label7.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(7, 70)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(78, 13)
+        Me.Label7.Size = New System.Drawing.Size(132, 17)
         Me.Label7.TabIndex = 20
         Me.Label7.Text = "Customer NIC :"
         '
@@ -195,10 +195,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(23, 111)
+        Me.Label8.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(7, 107)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
+        Me.Label8.Size = New System.Drawing.Size(122, 17)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "Customer TP :"
         '
@@ -206,10 +206,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(23, 37)
+        Me.Label6.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(7, 33)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 13)
+        Me.Label6.Size = New System.Drawing.Size(119, 17)
         Me.Label6.TabIndex = 20
         Me.Label6.Text = "Vehicle Num :"
         '
@@ -217,17 +217,17 @@ Partial Class frmRegisterVehicle
         '
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(23, 148)
+        Me.Label9.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(7, 144)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 13)
+        Me.Label9.Size = New System.Drawing.Size(118, 17)
         Me.Label9.TabIndex = 22
         Me.Label9.Text = "Vehicle Type :"
         '
         'txtDepVehicle
         '
         Me.txtDepVehicle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDepVehicle.Location = New System.Drawing.Point(119, 30)
+        Me.txtDepVehicle.Location = New System.Drawing.Point(147, 33)
         Me.txtDepVehicle.Name = "txtDepVehicle"
         Me.txtDepVehicle.Size = New System.Drawing.Size(187, 20)
         Me.txtDepVehicle.TabIndex = 21
@@ -235,7 +235,7 @@ Partial Class frmRegisterVehicle
         'txtTP
         '
         Me.txtTP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTP.Location = New System.Drawing.Point(119, 68)
+        Me.txtTP.Location = New System.Drawing.Point(144, 68)
         Me.txtTP.Name = "txtTP"
         Me.txtTP.Size = New System.Drawing.Size(187, 21)
         Me.txtTP.TabIndex = 7
@@ -243,7 +243,7 @@ Partial Class frmRegisterVehicle
         'txtVID
         '
         Me.txtVID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtVID.Location = New System.Drawing.Point(119, 144)
+        Me.txtVID.Location = New System.Drawing.Point(144, 144)
         Me.txtVID.Name = "txtVID"
         Me.txtVID.Size = New System.Drawing.Size(187, 21)
         Me.txtVID.TabIndex = 9
@@ -251,7 +251,7 @@ Partial Class frmRegisterVehicle
         'txtNIC
         '
         Me.txtNIC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNIC.Location = New System.Drawing.Point(119, 30)
+        Me.txtNIC.Location = New System.Drawing.Point(144, 30)
         Me.txtNIC.Name = "txtNIC"
         Me.txtNIC.Size = New System.Drawing.Size(187, 21)
         Me.txtNIC.TabIndex = 6
@@ -273,10 +273,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(28, 151)
+        Me.Label5.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 144)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(83, 15)
+        Me.Label5.Size = New System.Drawing.Size(119, 17)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Vehicle Num :"
         '
@@ -297,10 +297,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(28, 113)
+        Me.Label4.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 106)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 15)
+        Me.Label4.Size = New System.Drawing.Size(118, 17)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Vehicle Type :"
         '
@@ -308,7 +308,7 @@ Partial Class frmRegisterVehicle
         '
         Me.cmbVType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbVType.FormattingEnabled = True
-        Me.cmbVType.Location = New System.Drawing.Point(119, 105)
+        Me.cmbVType.Location = New System.Drawing.Point(144, 105)
         Me.cmbVType.Name = "cmbVType"
         Me.cmbVType.Size = New System.Drawing.Size(187, 23)
         Me.cmbVType.TabIndex = 15
@@ -317,10 +317,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(28, 75)
+        Me.Label3.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 68)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(84, 15)
+        Me.Label3.Size = New System.Drawing.Size(122, 17)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Customer TP :"
         '
@@ -328,10 +328,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(28, 37)
+        Me.Label2.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 30)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 15)
+        Me.Label2.Size = New System.Drawing.Size(132, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Customer NIC :"
         '
@@ -339,10 +339,10 @@ Partial Class frmRegisterVehicle
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(28, 189)
+        Me.Label1.Font = New System.Drawing.Font("Perpetua Titling MT", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 182)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 15)
+        Me.Label1.Size = New System.Drawing.Size(129, 17)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Current Time :"
         '
@@ -369,7 +369,7 @@ Partial Class frmRegisterVehicle
         Me.lblTime.AutoSize = True
         Me.lblTime.BackColor = System.Drawing.Color.Transparent
         Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(116, 189)
+        Me.lblTime.Location = New System.Drawing.Point(151, 185)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(68, 15)
         Me.lblTime.TabIndex = 19
