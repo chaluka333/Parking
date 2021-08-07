@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Details
+Public Class frmDetails
     Private between = False
     Private dt As DataTable = New DataTable()
     Dim DBCon As MySqlConnection = DBConnection.GetConnection()
