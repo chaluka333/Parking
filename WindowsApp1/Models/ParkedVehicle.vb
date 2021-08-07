@@ -7,4 +7,6 @@
     Public ArrTime As DateTime
     Public Location As Int16
     Public DepTime As DateTime
+    Public fee As Integer
+
 End Class

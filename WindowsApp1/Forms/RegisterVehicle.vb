@@ -224,9 +224,19 @@ Public Class frmRegisterVehicle
 
                 RefreshListView()
                 RefreshDGV()
+
                 ClearDep()
                 txtDepVehicle.Text = ""
                 MessageBox.Show("Vehicle departure complete" + Environment.NewLine + "Fee : Rs." + fee.ToString() + ".00", "Successfull", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Dim dptTicket = New TicketDep()
+                dptTicket.vNum = response.Vnum
+                dptTicket.dptDate = response.DepTime
+                dptTicket.fee = response.fee
+                Dim ticket = New DepReport(dptTicket)
+                ticket.Show()
+
+
             End If
         End If
     End Sub
