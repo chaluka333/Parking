@@ -166,10 +166,10 @@ Public Class frmRegisterVehicle
 
     Private Sub RefreshDGV()
         vhList = metaData.GetParkedList()
+        dt.Rows.Clear()
 
         If vhList.Count > 0 Then
             Dim autoCol As New AutoCompleteStringCollection
-            dt.Rows.Clear()
 
             For Each item In vhList
                 dt.Rows.Add(item.dbID, item.Vnum, item.Type, item.Location, item.ID, item.TP, item.ArrTime.ToString("dd/MMM | HH:mm"))
@@ -231,8 +231,9 @@ Public Class frmRegisterVehicle
 
                 Dim dptTicket = New TicketDep()
                 dptTicket.vNum = response.Vnum
-                dptTicket.dptDate = response.DepTime
-                dptTicket.fee = response.fee
+                dptTicket.dptDate = response.DepTime.ToString("yy - MMM - dd")
+                dptTicket.depTime = response.DepTime.ToString("HH : mm")
+                dptTicket.fee = "Rs." + fee.ToString() + ".00"
                 Dim ticket = New DepReport(dptTicket)
                 ticket.Show()
 

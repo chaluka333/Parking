@@ -117,6 +117,12 @@
     <Compile Include="Forms\DepReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Details.Designer.vb">
+      <DependentUpon>Details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Details.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmHome.Designer.vb">
       <DependentUpon>frmHome.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\DepReport.resx">
       <DependentUpon>DepReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Details.resx">
+      <DependentUpon>Details.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHome.resx">
       <DependentUpon>frmHome.vb</DependentUpon>
