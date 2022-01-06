@@ -28,18 +28,24 @@ Public Class frmDetails
         Dim i = 1
 
         If between Then
-            cmd.CommandText = "SELECT tblpersonal.NIC, TP_number, V_Type, V_Number, Arrival_Time, Depature_Time, Location FROM tblparking INNER JOIN tblpersonal ON tblparking.NIC = tblpersonal.NIC WHERE Arrival_Time > @arrTimeStart AND Arrival_Time < @arrTimeEnd AND Depature_Time IS NOT NULL"
+            cmd.CommandText = "SELECT tblpersonal.NIC, TP_number, V_Type, V_Number, Arrival_Time, Depature_Time, Location 
+                FROM tblparking INNER JOIN tblpersonal ON tblparking.NIC = tblpersonal.NIC WHERE Arrival_Time > @arrTimeStart AND 
+                Arrival_Time < @arrTimeEnd AND Depature_Time IS NOT NULL"
             cmd.Parameters.AddWithValue("@arrTimeStart", dtpFrom.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@arrTimeEnd", dtpTo.Value.AddDays(1).ToString("yyyy-MM-dd"))
         Else
-            cmd.CommandText = "SELECT tblpersonal.NIC, TP_number, V_Type, V_Number, Arrival_Time, Depature_Time, Location FROM tblparking INNER JOIN tblpersonal ON tblparking.NIC = tblpersonal.NIC WHERE Arrival_Time > @arrTimeStart AND Arrival_Time < @arrTimeEnd AND Depature_Time IS NOT NULL"
+            cmd.CommandText = "SELECT tblpersonal.NIC, TP_number, V_Type, V_Number, Arrival_Time, Depature_Time, 
+                Location FROM tblparking INNER JOIN tblpersonal ON tblparking.NIC = tblpersonal.NIC WHERE Arrival_Time > @arrTimeStart 
+                AND Arrival_Time < @arrTimeEnd AND Depature_Time IS NOT NULL"
             cmd.Parameters.AddWithValue("@arrTimeStart", dtpFrom.Value.ToString("yyyy-MM-dd"))
             cmd.Parameters.AddWithValue("@arrTimeEnd", dtpFrom.Value.AddDays(1).ToString("yyyy-MM-dd"))
         End If
 
         Using reader = cmd.ExecuteReader
             While reader.Read
-                dt.Rows.Add(i, reader.GetString(2), reader.GetString(3), reader.GetString(0), reader.GetString(1), reader.GetString(6), reader.GetDateTime(4).ToString("yy - MMM - dd"), reader.GetDateTime(4).ToString("HH:mm"), reader.GetDateTime(5).ToString("HH:mm"))
+                dt.Rows.Add(i, reader.GetString(2), reader.GetString(3), reader.GetString(0), reader.GetString(1), reader.GetString(6),
+                            reader.GetDateTime(4).ToString("yy - MMM - dd"), reader.GetDateTime(4).ToString("HH:mm"),
+                            reader.GetDateTime(5).ToString("HH:mm"))
                 i = i + 1
             End While
         End Using
