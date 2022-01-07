@@ -10,7 +10,8 @@ Friend Class DBConnection
             Connection.Open()
             Debug.WriteLine("Connection opened")
         Catch ex As Exception
-            MessageBox.Show("Couldn't open the connection. Please re-run the program", "Database connection error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Couldn't open the connection. Please re-run the program", "Database connection error", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error)
             Application.Exit()
         End Try
     End Sub

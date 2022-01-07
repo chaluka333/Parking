@@ -432,10 +432,10 @@ Partial Class frmRegisterVehicle
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1193, 688)
+        Me.Controls.Add(Me.dgv1)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.lv1)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.dgv1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmRegisterVehicle"
         Me.Text = "Register Vehicle"
